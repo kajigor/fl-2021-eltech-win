@@ -1,0 +1,3 @@
+[submodule "L-lang-parser"]
+	path = L-lang-parser
+	url = https://github.com/kinekt2000/L-lang-parser.git
