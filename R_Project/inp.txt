@@ -1,0 +1,12 @@
+eval St (var X) U :- elem X St U.
+eval St (conj X Y) true :- eval St X true, eval St Y true.
+eval St (conj X Y) false :- eval St X false; eval St Y false.
+eval St (disj X Y) true :- eval St X true; eval St Y true.
+eval St (disj X Y) false :- eval St X false, eval St Y false.
+eval St (not X) true :- eval St X false.
+eval St (not X) false :- eval St X true.
+
+elem zero (cons H T) H.
+elem (succ N) (cons H T) V :- elem N T V.
+
+? eval St (conj (disj X Y) (not (var Z))) true.
